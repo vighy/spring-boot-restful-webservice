@@ -1,5 +1,7 @@
 package com.examples;
 
+import java.math.BigInteger;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +22,7 @@ public class Controller
 	}
 	
 	@RequestMapping("/api/Fibonacci")
-	public long generateSumOfFibonacci(@RequestParam(value = "n", defaultValue = "1") int n)
+	public BigInteger generateSumOfFibonacci(@RequestParam(value = "n", defaultValue = "1") int n)
 	{
 		return new FibonacciGenerator().generator(n);
 	}
