@@ -1,14 +1,13 @@
 package com.examples.fibonacci;
 
-import java.math.BigInteger;
 import java.util.stream.Stream;
 
 public class FibonacciGenerator
 {
-	public BigInteger generator(int n)
+	public long generator(long n)
 	{
-		BigInteger [] result = Stream.iterate(new BigInteger[]{ BigInteger.ONE, BigInteger.ONE },
-	               p->new BigInteger[]{ p[1], p[0].add(p[1]) })
+		long [] result = Stream.iterate(new long[]{ 1, 1 },
+	               p->new long[]{ p[1], p[0]+(p[1]) })
 				.limit(n)
 				.reduce((first, second) -> second).get();
 		return result[0];
